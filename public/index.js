@@ -30,21 +30,21 @@ var time = cars[i].pricePerDay*diffDays;
 var newPrice = time + distance;
 rentals[i].price= newPrice;
 
-/*
-  if(diffDays>=1&&diffDays<4)
+
+  if(diffDays>=1 && diffDays<4)
     {
-      rentals[i].price= newPrice-newPrice/10;
+      rentals[i].price= newPrice-newPrice*0.1;
     }
 
   if(diffDays>=4 && diffDays<10)
     {
-      rentals[i].price= newPrice-newPrice/30;
+      rentals[i].price= newPrice-newPrice*0.33;
     }
   if(diffDays>=10)
     {
-      rentals[i].price= newPrice-newPrice/50;
+      rentals[i].price= newPrice-newPrice/2;
     }  
-    */  
+     
 }
 
 }
