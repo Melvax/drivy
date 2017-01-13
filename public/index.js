@@ -38,12 +38,21 @@ rentals[i].price= newPrice;
 
   if(diffDays>=4 && diffDays<10)
     {
-      rentals[i].price= newPrice-newPrice*0.33;
+      rentals[i].price= newPrice-newPrice*0.3;
     }
   if(diffDays>=10)
     {
       rentals[i].price= newPrice-newPrice/2;
     }  
+
+var commission=rentals[i].price*0.3;
+var insu = commission/2;
+var assi = diffDays;
+var dri = commission- (insu+assi);
+
+rentals[i].drivy=dri;
+rentals[i].insurance = insu;
+rentals[i].assistance=assi;
      
 }
 
