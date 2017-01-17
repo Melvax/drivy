@@ -60,10 +60,36 @@ var dri = commission- (insu+assi);
 rentals[i].drivy=dri;
 rentals[i].insurance = insu;
 rentals[i].assistance=assi;
+
+  for (var j=0, l=actors[0].payment.length; j<l;j++){
+ 
+      if(actors[i].payment[j].who=="driver"){
+        actors[i].payment[j].amount=newPrice;
+      }
+
+      if(actors[i].payment[j].who=="owner"){
+        actors[i].payment[j].amount=newPrice-commission;
+      }
+
+      if(actors[i].payment[j].who=="insurance"){
+        actors[i].payment[j].amount=insu;
+      }
+
+      if(actors[i].payment[j].who=="assistance"){
+        actors[i].payment[j].amount=assi;
+      }
+
+      if(actors[i].payment[j].who=="drivy"){
+        actors[i].payment[j].amount=dri;
+      }
+                              
+    } 
+  
+  }
      
 }
 
-}
+
 var m =0;
 var amount = 0;
 function modifyAmount(){
