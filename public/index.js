@@ -28,23 +28,30 @@ var returnDate2 = new Date(rentals[i].returnDate);
 var distance = cars[i].pricePerKm*rentals[i].distance;
 var time = cars[i].pricePerDay*diffDays;
 var newPrice = time + distance;
+var deductibleReduc = diffDays*4;
+
 rentals[i].price= newPrice;
 
 
   if(diffDays>=1 && diffDays<4)
     {
-      rentals[i].price= newPrice-newPrice*0.1;
+      newPrice= newPrice-newPrice*0.1;
     }
 
   if(diffDays>=4 && diffDays<10)
     {
-      rentals[i].price= newPrice-newPrice*0.3;
+      newPrice= newPrice-newPrice*0.3;
     }
   if(diffDays>=10)
     {
-      rentals[i].price= newPrice-newPrice/2;
+      newPrice= newPrice-newPrice/2;
     }  
+  if(rentals[i].deductibleReduction==true)
+    {
+    newPrice=newPrice - deductibleReduc;
+    }
 
+rentals[i].price= newPrice;
 var commission=rentals[i].price*0.3;
 var insu = commission/2;
 var assi = diffDays;
@@ -57,6 +64,13 @@ rentals[i].assistance=assi;
 }
 
 }
+var m =0;
+var amount = 0;
+function modifyAmount(){
+  for(var i = 0; i < actors.length; i++){
+      actors
+    }
+  }
 //list of rentals
 //useful for ALL exercises
 //The `price` is updated from exercice 1
